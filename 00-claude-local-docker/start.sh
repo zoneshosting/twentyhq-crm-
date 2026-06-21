@@ -8,6 +8,12 @@ if ! command -v docker >/dev/null 2>&1; then
   exit 1
 fi
 
+# .env is git-ignored, so create it from the template on first run.
+if [ ! -f .env ]; then
+  echo "Creating .env from env.local-docker ..."
+  cp env.local-docker .env
+fi
+
 echo "Pulling images and starting Twenty CRM..."
 docker compose pull
 docker compose up -d

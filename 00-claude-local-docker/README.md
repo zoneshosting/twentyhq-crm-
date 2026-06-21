@@ -43,8 +43,13 @@ Run these from inside `H:\00-Claude`:
 
 ## What's inside
 - `docker-compose.yml` — the 4 services (server, worker, db, redis)
-- `.env` — config with a **freshly generated `ENCRYPTION_KEY`** and DB password
-- `start.bat` / `start.sh` — convenience launchers
+- `env.local-docker` — config template with a generated `ENCRYPTION_KEY` and DB password
+- `start.bat` / `start.sh` — launchers (they auto-copy `env.local-docker` → `.env` on first run)
+
+> `.env` is git-ignored, so it is **not** in the repo. The start scripts create it
+> from `env.local-docker` automatically. If you run `docker compose` directly
+> instead of the start script, first do: `copy env.local-docker .env` (Windows)
+> or `cp env.local-docker .env` (macOS/Linux).
 
 ## Notes
 - Data persists in Docker named volumes (`db-data`, `server-local-data`), not in this

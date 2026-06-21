@@ -13,6 +13,12 @@ if errorlevel 1 (
   exit /b 1
 )
 
+REM .env is git-ignored, so create it from the template on first run.
+if not exist ".env" (
+  echo Creating .env from env.local-docker ...
+  copy /Y "env.local-docker" ".env" >nul
+)
+
 echo Pulling images and starting Twenty CRM...
 docker compose pull
 docker compose up -d
