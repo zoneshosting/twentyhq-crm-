@@ -25,7 +25,7 @@ if errorlevel 1 (
 echo.
 echo ============================================================
 echo  Twenty is starting up. First boot runs DB migrations and
-echo  can take 1-3 minutes. Then open:   http://localhost:3000
+echo  can take 1-3 minutes. Then open:   http://localhost:3300
 echo ============================================================
 echo.
 echo  Useful commands (run in this folder):

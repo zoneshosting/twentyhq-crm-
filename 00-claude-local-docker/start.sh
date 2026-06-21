@@ -16,7 +16,7 @@ cat <<'EOF'
 
 ============================================================
  Twenty is starting up. First boot runs DB migrations and
- can take 1-3 minutes. Then open:   http://localhost:3000
+ can take 1-3 minutes. Then open:   http://localhost:3300
 ============================================================
 
  Useful commands (run in this folder):

@@ -24,7 +24,11 @@ xcopy /E /I 00-claude-local-docker H:\00-Claude
 2. Open `H:\00-Claude`.
 3. Double-click **`start.bat`** (or in a terminal: `docker compose up -d`).
 4. Wait 1–3 minutes on first boot (it creates the database and runs migrations).
-5. Open **http://localhost:3000** and create your workspace / account.
+5. Open **http://localhost:3300** and create your workspace / account.
+
+> Runs on host port **3300** (mapped to the container's 3000) to avoid clashing
+> with anything already using 3000. To change it, edit the `ports` line in
+> `docker-compose.yml` **and** `SERVER_URL` in `.env` to the same port.
 
 ## Everyday commands
 Run these from inside `H:\00-Claude`:
